@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "ChildItemTableViewController.h"
+#import "ParentItemTableViewCell.h"
 #import "ParentItem.h"
 
 @interface MasterViewController ()
@@ -67,11 +68,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParentItemCell" forIndexPath:indexPath];
+    ParentItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParentItemCell" forIndexPath:indexPath];
 
     ParentItem *object = self.objects[indexPath.row];
-    cell.textLabel.text = object.name;
-    cell.detailTextLabel.text = object.detail;
+    [cell populate:object];
     return cell;
 }
 

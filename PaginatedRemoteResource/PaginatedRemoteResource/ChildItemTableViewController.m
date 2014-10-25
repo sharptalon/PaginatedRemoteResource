@@ -8,6 +8,7 @@
 
 #import "ChildItemTableViewController.h"
 #import "DetailViewController.h"
+#import "ChildItemTableViewCell.h"
 #import "ParentItem.h"
 #import "ChildItem.h"
 
@@ -51,11 +52,9 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChildItemCell" forIndexPath:indexPath];
-    
+    ChildItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChildItemCell" forIndexPath:indexPath];    
     ChildItem *object = self.objects[indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%@, child of %@", object.name, object.parent.name];
-    cell.detailTextLabel.text = object.detail;
+    [cell populate:object];
     return cell;
 }
 

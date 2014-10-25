@@ -18,6 +18,8 @@
 		4D97286C19FC49AC00B421FC /* ParentItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97286B19FC49AC00B421FC /* ParentItem.m */; };
 		4D97287019FC49FE00B421FC /* ChildItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97286F19FC49FE00B421FC /* ChildItem.m */; };
 		4D97287319FC4E7300B421FC /* ChildItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97287219FC4E7300B421FC /* ChildItemTableViewController.m */; };
+		4D97287719FC6AEA00B421FC /* ParentItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97287619FC6AEA00B421FC /* ParentItemTableViewCell.m */; };
+		4D97287A19FC6B0200B421FC /* ChildItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97287919FC6B0200B421FC /* ChildItemTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,10 @@
 		4D97286F19FC49FE00B421FC /* ChildItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItem.m; sourceTree = "<group>"; };
 		4D97287119FC4E7300B421FC /* ChildItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildItemTableViewController.h; sourceTree = "<group>"; };
 		4D97287219FC4E7300B421FC /* ChildItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemTableViewController.m; sourceTree = "<group>"; };
+		4D97287519FC6AEA00B421FC /* ParentItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentItemTableViewCell.h; sourceTree = "<group>"; };
+		4D97287619FC6AEA00B421FC /* ParentItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentItemTableViewCell.m; sourceTree = "<group>"; };
+		4D97287819FC6B0200B421FC /* ChildItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildItemTableViewCell.h; sourceTree = "<group>"; };
+		4D97287919FC6B0200B421FC /* ChildItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				4D97285219FC3C6000B421FC /* LaunchScreen.xib */,
 				4D97284019FC3C6000B421FC /* Supporting Files */,
 				4D97286919FC3DF900B421FC /* View Controllers */,
+				4D97287419FC6AC800B421FC /* Table Cells */,
 				4D97286D19FC49B400B421FC /* Data */,
 			);
 			path = PaginatedRemoteResource;
@@ -153,6 +160,17 @@
 				4D97286F19FC49FE00B421FC /* ChildItem.m */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		4D97287419FC6AC800B421FC /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4D97287519FC6AEA00B421FC /* ParentItemTableViewCell.h */,
+				4D97287619FC6AEA00B421FC /* ParentItemTableViewCell.m */,
+				4D97287819FC6B0200B421FC /* ChildItemTableViewCell.h */,
+				4D97287919FC6B0200B421FC /* ChildItemTableViewCell.m */,
+			);
+			name = "Table Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,10 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D97287719FC6AEA00B421FC /* ParentItemTableViewCell.m in Sources */,
 				4D97286C19FC49AC00B421FC /* ParentItem.m in Sources */,
 				4D97284619FC3C6000B421FC /* AppDelegate.m in Sources */,
 				4D97284919FC3C6000B421FC /* MasterViewController.m in Sources */,
 				4D97287319FC4E7300B421FC /* ChildItemTableViewController.m in Sources */,
+				4D97287A19FC6B0200B421FC /* ChildItemTableViewCell.m in Sources */,
 				4D97284319FC3C6000B421FC /* main.m in Sources */,
 				4D97284C19FC3C6000B421FC /* DetailViewController.m in Sources */,
 				4D97287019FC49FE00B421FC /* ChildItem.m in Sources */,
