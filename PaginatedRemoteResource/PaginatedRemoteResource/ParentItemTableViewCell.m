@@ -13,8 +13,16 @@
 
 - (void)populate:(ParentItem *)item
 {
-    self.nameLabel.text = item.name;
-    self.detailLabel.text = item.detail;
+    if (item) {
+        self.nameLabel.textColor = [UIColor blackColor];
+        self.nameLabel.text = item.name;
+        self.detailLabel.text = item.detail;
+    }
+    else {
+        self.nameLabel.textColor = [UIColor redColor];
+        self.nameLabel.text = @"Loading parent item...";
+        self.detailLabel.text = @"Loading...";
+    }
 }
 
 @end
