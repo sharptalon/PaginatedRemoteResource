@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Sharp Talon. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "ParentItemTableViewController.h"
 #import "ChildItemTableViewController.h"
 #import "ParentItemTableViewCell.h"
 #import "ParentItem.h"
 
-@interface MasterViewController ()
+@interface ParentItemTableViewController ()
 
 @property NSMutableArray *objects;
 
 @end
 
 
-@implementation MasterViewController
+@implementation ParentItemTableViewController
 
 #pragma mark - View Controller Lifecycle
 

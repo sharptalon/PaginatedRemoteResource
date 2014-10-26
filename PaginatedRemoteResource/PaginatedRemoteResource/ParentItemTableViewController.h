@@ -10,7 +10,7 @@
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
+@interface ParentItemTableViewController : UITableViewController
 
 @end
 

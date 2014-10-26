@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4D97284319FC3C6000B421FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97284219FC3C6000B421FC /* main.m */; };
 		4D97284619FC3C6000B421FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97284519FC3C6000B421FC /* AppDelegate.m */; };
-		4D97284919FC3C6000B421FC /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97284819FC3C6000B421FC /* MasterViewController.m */; };
+		4D97284919FC3C6000B421FC /* ParentItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97284819FC3C6000B421FC /* ParentItemTableViewController.m */; };
 		4D97284C19FC3C6000B421FC /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97284B19FC3C6000B421FC /* DetailViewController.m */; };
 		4D97284F19FC3C6000B421FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D97284D19FC3C6000B421FC /* Main.storyboard */; };
 		4D97285119FC3C6000B421FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D97285019FC3C6000B421FC /* Images.xcassets */; };
@@ -42,8 +42,8 @@
 		4D97284219FC3C6000B421FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4D97284419FC3C6000B421FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4D97284519FC3C6000B421FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4D97284719FC3C6000B421FC /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		4D97284819FC3C6000B421FC /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		4D97284719FC3C6000B421FC /* ParentItemTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentItemTableViewController.h; sourceTree = "<group>"; };
+		4D97284819FC3C6000B421FC /* ParentItemTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentItemTableViewController.m; sourceTree = "<group>"; };
 		4D97284A19FC3C6000B421FC /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		4D97284B19FC3C6000B421FC /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		4D97284E19FC3C6000B421FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,8 +155,8 @@
 		4D97286919FC3DF900B421FC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4D97284719FC3C6000B421FC /* MasterViewController.h */,
-				4D97284819FC3C6000B421FC /* MasterViewController.m */,
+				4D97284719FC3C6000B421FC /* ParentItemTableViewController.h */,
+				4D97284819FC3C6000B421FC /* ParentItemTableViewController.m */,
 				4D97287119FC4E7300B421FC /* ChildItemTableViewController.h */,
 				4D97287219FC4E7300B421FC /* ChildItemTableViewController.m */,
 				4D97284A19FC3C6000B421FC /* DetailViewController.h */,
@@ -307,7 +307,7 @@
 				4D97286C19FC49AC00B421FC /* ParentItem.m in Sources */,
 				4D97284619FC3C6000B421FC /* AppDelegate.m in Sources */,
 				4D97288719FC7E8700B421FC /* ChildItemRemoteResource.m in Sources */,
-				4D97284919FC3C6000B421FC /* MasterViewController.m in Sources */,
+				4D97284919FC3C6000B421FC /* ParentItemTableViewController.m in Sources */,
 				4D97287319FC4E7300B421FC /* ChildItemTableViewController.m in Sources */,
 				4D97287A19FC6B0200B421FC /* ChildItemTableViewCell.m in Sources */,
 				4D97288A19FC856000B421FC /* ItemCache.m in Sources */,
