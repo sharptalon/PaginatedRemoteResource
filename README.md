@@ -9,5 +9,5 @@ Two mock implementations of this protocol are provided, representing the fetchin
 
 The mock implementations are merely generating and returning local data, but they each support the specification of a delay parameter which is used to simulate the time required to request and parse data being requested from a remote network endpoint.
 
-A shared base class for the table view controllers, named `RemoteResourceItemTableViewController`, takes care of fetching data from the resource endpoint, as well as caching it locally. In addition, as the user scrolls through the corresponding table views, this class takes care of automatically fetching any missing data and updating the table view once it is available.
+A shared `UITableViewController` subclass for the master views, named `RemoteResourceItemTableViewController`, takes care of fetching data from the resource endpoint, as well as caching it locally. In addition, as the user scrolls through the corresponding table views, this class takes care of automatically fetching any missing data and updating the table view once it is available.
 
