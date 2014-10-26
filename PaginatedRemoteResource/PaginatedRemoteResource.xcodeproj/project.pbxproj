@@ -75,6 +75,7 @@
 		4D97288B19FD89EC00B421FC /* RemoteResourceItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableViewCell.h; sourceTree = "<group>"; };
 		4D97288C19FD8E4300B421FC /* RemoteResourceItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableViewController.h; sourceTree = "<group>"; };
 		4D97288D19FD8E4300B421FC /* RemoteResourceItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteResourceItemTableViewController.m; sourceTree = "<group>"; };
+		4D97289019FDA99500B421FC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,10 +118,11 @@
 			isa = PBXGroup;
 			children = (
 				4D97284D19FC3C6000B421FC /* Main.storyboard */,
-				4D97284419FC3C6000B421FC /* AppDelegate.h */,
-				4D97284519FC3C6000B421FC /* AppDelegate.m */,
 				4D97285019FC3C6000B421FC /* Images.xcassets */,
 				4D97285219FC3C6000B421FC /* LaunchScreen.xib */,
+				4D97284419FC3C6000B421FC /* AppDelegate.h */,
+				4D97284519FC3C6000B421FC /* AppDelegate.m */,
+				4D97289019FDA99500B421FC /* Constants.h */,
 				4D97284019FC3C6000B421FC /* Supporting Files */,
 				4D97286919FC3DF900B421FC /* View Controllers */,
 				4D97287419FC6AC800B421FC /* Table Cells */,

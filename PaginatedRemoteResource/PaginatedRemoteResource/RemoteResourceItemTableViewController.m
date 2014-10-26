@@ -9,7 +9,7 @@
 #import "RemoteResourceItemTableViewController.h"
 #import "RemoteResourceItemTableViewCell.h"
 
-#define FETCH_ITEMS_LIMIT 25
+#include "Constants.h"
 
 @interface RemoteResourceItemTableViewController ()
 

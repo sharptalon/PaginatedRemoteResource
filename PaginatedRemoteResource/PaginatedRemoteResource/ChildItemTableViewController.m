@@ -15,6 +15,7 @@
 #import "ItemCache.h"
 #import "ChildItemRemoteResource.h"
 
+#include "Constants.h"
 
 @implementation ChildItemTableViewController
 
@@ -29,7 +30,7 @@
 
 - (void)viewDidLoad
 {
-    [self setupResourceManagementFor:[[ChildItemRemoteResource alloc] initWithTotalItemCount:500 parent:self.parentItem]
+    [self setupResourceManagementFor:[[ChildItemRemoteResource alloc] initWithTotalItemCount:NUMBER_OF_CHILDREN_PER_PARENT parent:self.parentItem]
                      itemCountGetter:^NSUInteger{
                          AppDelegate *app = [UIApplication sharedApplication].delegate;
                          NSUInteger childCount;

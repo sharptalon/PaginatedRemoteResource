@@ -10,13 +10,15 @@
 #import "ParentItem.h"
 #import "ChildItem.h"
 
+#include "Constants.h"
+
 @implementation ChildItemRemoteResource
 
 #pragma mark - Initializer
 
 - (id)initWithTotalItemCount:(NSUInteger)totalItemCount parent:(ParentItem *)parent
 {
-    self = [super initWithTotalItemCount:totalItemCount maxDelay:3.0
+    self = [super initWithTotalItemCount:totalItemCount maxDelay:CHILD_RESOURCE_MAX_DELAY
                            itemGenerator:^NSObject *(NSUInteger itemIndex) {
                                ChildItem *item = [[ChildItem alloc] initWithParent:parent
                                                                               name:[NSString stringWithFormat:@"%@-Child %lu", parent.name, (unsigned long)itemIndex]
