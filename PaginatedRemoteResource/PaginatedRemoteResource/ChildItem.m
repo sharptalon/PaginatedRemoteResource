@@ -11,9 +11,14 @@
 
 @implementation ChildItem
 
+#pragma mark - Properties
+
 @synthesize parent = _parent;
 @synthesize name = _name;
 @synthesize detail = _detail;
+
+
+#pragma mark - Initializer
 
 - (id)initWithParent:(ParentItem *)parent name:(NSString *)name detail:(NSString *)detail
 {

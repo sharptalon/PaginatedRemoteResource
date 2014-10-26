@@ -11,6 +11,8 @@
 
 @implementation ParentItemTableViewCell
 
+#pragma mark - Populating Views
+
 - (void)populateFor:(ParentItem *)item
 {
     if (item) {

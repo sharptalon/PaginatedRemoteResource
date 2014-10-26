@@ -16,7 +16,7 @@
 
 @implementation DetailViewController
 
-#pragma mark - Managing the detail item
+#pragma mark - Properties
 
 - (void)setDetailItem:(ChildItem *)newDetailItem {
     if (_detailItem != newDetailItem) {
@@ -27,13 +27,8 @@
     }
 }
 
-- (void)configureView {
-    // Update the user interface for the detail item.
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [NSString stringWithFormat:@"Selected %@, child of %@", self.detailItem.name, self.detailItem.parent.name];
-        self.navigationItem.title = [NSString stringWithFormat:@"Child Detail: %@", self.detailItem.name];
-    }
-}
+
+#pragma mark - View Controller Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,9 +36,15 @@
     [self configureView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark - Populating Views
+
+- (void)configureView {
+    // Update the user interface for the detail item.
+    if (self.detailItem) {
+        self.detailDescriptionLabel.text = [NSString stringWithFormat:@"Selected %@, child of %@", self.detailItem.name, self.detailItem.parent.name];
+        self.navigationItem.title = [NSString stringWithFormat:@"Child Detail: %@", self.detailItem.name];
+    }
 }
 
 @end

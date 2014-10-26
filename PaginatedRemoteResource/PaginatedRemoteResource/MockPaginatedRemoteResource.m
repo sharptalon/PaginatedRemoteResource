@@ -10,9 +10,14 @@
 
 @implementation MockPaginatedRemoteResource
 
+#pragma mark - Properties
+
 @synthesize totalItemCount = _totalItemCount;
 @synthesize maxDelay = _maxDelay;
 @synthesize itemGeneratorBlock = _itemGeneratorBlock;
+
+
+#pragma mark - Initializer
 
 - (id)initWithTotalItemCount:(NSUInteger)totalItemCount maxDelay:(NSTimeInterval)maxDelay itemGenerator:(MockPaginatedRemoteResourceItemGeneratorBlock)itemGenerator
 {
@@ -24,6 +29,9 @@
     }
     return self;
 }
+
+
+#pragma mark - PaginatedRemoteResource
 
 - (void)fetchItemsStartingAt:(NSUInteger)offset withLimit:(NSUInteger)limit completion:(PaginatedRemoteResourceBlock)completion
 {

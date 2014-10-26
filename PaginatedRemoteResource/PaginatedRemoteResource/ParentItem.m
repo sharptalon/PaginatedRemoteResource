@@ -10,8 +10,13 @@
 
 @implementation ParentItem
 
+#pragma mark - Properties
+
 @synthesize name = _name;
 @synthesize detail = _detail;
+
+
+#pragma mark - Initializer
 
 - (id)initWithName:(NSString *)name detail:(NSString *)detail
 {

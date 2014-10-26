@@ -12,6 +12,8 @@
 
 @implementation ChildItemTableViewCell
 
+#pragma mark - Populating Views
+
 - (void)populateFor:(ChildItem *)item
 {
     if (item) {

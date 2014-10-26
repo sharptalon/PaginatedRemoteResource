@@ -18,10 +18,16 @@
 
 @end
 
+
 @implementation ChildItemTableViewController
+
+#pragma mark - Properties
 
 @synthesize parentItem = _parentItem;
 @synthesize detailViewController = _detailViewController;
+
+
+#pragma mark - View Controller Lifecycle
 
 - (void)viewDidLoad
 {
@@ -60,7 +66,6 @@
 
 
 #pragma mark - Segues
-
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

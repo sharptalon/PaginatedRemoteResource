@@ -12,6 +12,8 @@
 
 @implementation ChildItemRemoteResource
 
+#pragma mark - Initializer
+
 - (id)initWithTotalItemCount:(NSUInteger)totalItemCount parent:(ParentItem *)parent
 {
     self = [super initWithTotalItemCount:totalItemCount maxDelay:3.0

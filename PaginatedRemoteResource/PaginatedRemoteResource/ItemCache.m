@@ -26,7 +26,7 @@
 @synthesize childItemCaches = _childItemCaches;
 
 
-#pragma mark - Initialization
+#pragma mark - Initializer
 
 - (id)init
 {
