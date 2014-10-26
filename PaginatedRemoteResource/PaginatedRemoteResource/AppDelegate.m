@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "ItemCache.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -15,6 +16,12 @@
 
 @implementation AppDelegate
 
+#pragma mark - Properties
+
+@synthesize itemCache = _itemCache;
+
+
+#pragma mark - Application Lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -22,6 +29,9 @@
     UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
     navigationController.topViewController.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem;
     splitViewController.delegate = self;
+    
+    self.itemCache = [[ItemCache alloc] init];
+    
     return YES;
 }
 
@@ -46,6 +56,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
 
 #pragma mark - Split view
 

@@ -20,6 +20,10 @@
 		4D97287319FC4E7300B421FC /* ChildItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97287219FC4E7300B421FC /* ChildItemTableViewController.m */; };
 		4D97287719FC6AEA00B421FC /* ParentItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97287619FC6AEA00B421FC /* ParentItemTableViewCell.m */; };
 		4D97287A19FC6B0200B421FC /* ChildItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97287919FC6B0200B421FC /* ChildItemTableViewCell.m */; };
+		4D97288119FC7E4400B421FC /* ParentItemRemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288019FC7E4400B421FC /* ParentItemRemoteResource.m */; };
+		4D97288419FC7E5C00B421FC /* MockPaginatedRemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288319FC7E5C00B421FC /* MockPaginatedRemoteResource.m */; };
+		4D97288719FC7E8700B421FC /* ChildItemRemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288619FC7E8700B421FC /* ChildItemRemoteResource.m */; };
+		4D97288A19FC856000B421FC /* ItemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288919FC856000B421FC /* ItemCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,15 @@
 		4D97287619FC6AEA00B421FC /* ParentItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentItemTableViewCell.m; sourceTree = "<group>"; };
 		4D97287819FC6B0200B421FC /* ChildItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildItemTableViewCell.h; sourceTree = "<group>"; };
 		4D97287919FC6B0200B421FC /* ChildItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemTableViewCell.m; sourceTree = "<group>"; };
+		4D97287B19FC7C2200B421FC /* PaginatedRemoteResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaginatedRemoteResource.h; sourceTree = "<group>"; };
+		4D97287F19FC7E4400B421FC /* ParentItemRemoteResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentItemRemoteResource.h; sourceTree = "<group>"; };
+		4D97288019FC7E4400B421FC /* ParentItemRemoteResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentItemRemoteResource.m; sourceTree = "<group>"; };
+		4D97288219FC7E5C00B421FC /* MockPaginatedRemoteResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockPaginatedRemoteResource.h; sourceTree = "<group>"; };
+		4D97288319FC7E5C00B421FC /* MockPaginatedRemoteResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockPaginatedRemoteResource.m; sourceTree = "<group>"; };
+		4D97288519FC7E8700B421FC /* ChildItemRemoteResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildItemRemoteResource.h; sourceTree = "<group>"; };
+		4D97288619FC7E8700B421FC /* ChildItemRemoteResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemRemoteResource.m; sourceTree = "<group>"; };
+		4D97288819FC856000B421FC /* ItemCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCache.h; sourceTree = "<group>"; };
+		4D97288919FC856000B421FC /* ItemCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCache.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +121,7 @@
 				4D97286919FC3DF900B421FC /* View Controllers */,
 				4D97287419FC6AC800B421FC /* Table Cells */,
 				4D97286D19FC49B400B421FC /* Data */,
+				4D97287E19FC7E1E00B421FC /* Remote Resources */,
 			);
 			path = PaginatedRemoteResource;
 			sourceTree = "<group>";
@@ -158,6 +172,8 @@
 				4D97286B19FC49AC00B421FC /* ParentItem.m */,
 				4D97286E19FC49FE00B421FC /* ChildItem.h */,
 				4D97286F19FC49FE00B421FC /* ChildItem.m */,
+				4D97288819FC856000B421FC /* ItemCache.h */,
+				4D97288919FC856000B421FC /* ItemCache.m */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -171,6 +187,20 @@
 				4D97287919FC6B0200B421FC /* ChildItemTableViewCell.m */,
 			);
 			name = "Table Cells";
+			sourceTree = "<group>";
+		};
+		4D97287E19FC7E1E00B421FC /* Remote Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4D97287B19FC7C2200B421FC /* PaginatedRemoteResource.h */,
+				4D97288219FC7E5C00B421FC /* MockPaginatedRemoteResource.h */,
+				4D97288319FC7E5C00B421FC /* MockPaginatedRemoteResource.m */,
+				4D97287F19FC7E4400B421FC /* ParentItemRemoteResource.h */,
+				4D97288019FC7E4400B421FC /* ParentItemRemoteResource.m */,
+				4D97288519FC7E8700B421FC /* ChildItemRemoteResource.h */,
+				4D97288619FC7E8700B421FC /* ChildItemRemoteResource.m */,
+			);
+			name = "Remote Resources";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,12 +306,16 @@
 				4D97287719FC6AEA00B421FC /* ParentItemTableViewCell.m in Sources */,
 				4D97286C19FC49AC00B421FC /* ParentItem.m in Sources */,
 				4D97284619FC3C6000B421FC /* AppDelegate.m in Sources */,
+				4D97288719FC7E8700B421FC /* ChildItemRemoteResource.m in Sources */,
 				4D97284919FC3C6000B421FC /* MasterViewController.m in Sources */,
 				4D97287319FC4E7300B421FC /* ChildItemTableViewController.m in Sources */,
 				4D97287A19FC6B0200B421FC /* ChildItemTableViewCell.m in Sources */,
+				4D97288A19FC856000B421FC /* ItemCache.m in Sources */,
 				4D97284319FC3C6000B421FC /* main.m in Sources */,
 				4D97284C19FC3C6000B421FC /* DetailViewController.m in Sources */,
+				4D97288119FC7E4400B421FC /* ParentItemRemoteResource.m in Sources */,
 				4D97287019FC49FE00B421FC /* ChildItem.m in Sources */,
+				4D97288419FC7E5C00B421FC /* MockPaginatedRemoteResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

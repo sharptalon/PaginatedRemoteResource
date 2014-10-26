@@ -20,6 +20,8 @@
 
 @implementation MasterViewController
 
+#pragma mark - View Controller Lifecycle
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -39,7 +41,6 @@
 {
     [super viewDidLoad];
 }
-
 
 
 #pragma mark - Segues
