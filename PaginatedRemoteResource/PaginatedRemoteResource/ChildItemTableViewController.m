@@ -8,7 +8,7 @@
 
 #import "ChildItemTableViewController.h"
 #import "DetailViewController.h"
-#import "ChildItemTableViewCell.h"
+#import "RemoteResourceItemTableViewCell.h"
 #import "ParentItem.h"
 #import "ChildItem.h"
 
@@ -124,7 +124,7 @@
 {
     AppDelegate *app = [UIApplication sharedApplication].delegate;
     ChildItem *object = [app.itemCache getChildItem:indexPath.row ofParentWithIndex:self.parentItemIndex];
-    ChildItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChildItemCell" forIndexPath:indexPath];
+    UITableViewCell <RemoteResourceItemTableViewCell> *cell = [tableView dequeueReusableCellWithIdentifier:@"ChildItemCell" forIndexPath:indexPath];
     if (object) {
         [cell populateFor:object];
     }

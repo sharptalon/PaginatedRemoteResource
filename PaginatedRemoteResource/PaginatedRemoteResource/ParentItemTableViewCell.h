@@ -6,17 +6,14 @@
 //  Copyright (c) 2014 Sharp Talon. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RemoteResourceItemTableViewCell.h"
 
 @class ParentItem;
 
-@interface ParentItemTableViewCell : UITableViewCell
+@interface ParentItemTableViewCell : UITableViewCell <RemoteResourceItemTableViewCell>
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *detailLabel;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
-
-- (void)populateFor:(ParentItem *)item;
-- (void)populateAsLoading;
 
 @end

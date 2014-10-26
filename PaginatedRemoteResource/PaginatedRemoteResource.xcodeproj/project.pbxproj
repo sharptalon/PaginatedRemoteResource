@@ -71,6 +71,7 @@
 		4D97288619FC7E8700B421FC /* ChildItemRemoteResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemRemoteResource.m; sourceTree = "<group>"; };
 		4D97288819FC856000B421FC /* ItemCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCache.h; sourceTree = "<group>"; };
 		4D97288919FC856000B421FC /* ItemCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCache.m; sourceTree = "<group>"; };
+		4D97288B19FD89EC00B421FC /* RemoteResourceItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableViewCell.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +182,7 @@
 		4D97287419FC6AC800B421FC /* Table Cells */ = {
 			isa = PBXGroup;
 			children = (
+				4D97288B19FD89EC00B421FC /* RemoteResourceItemTableViewCell.h */,
 				4D97287519FC6AEA00B421FC /* ParentItemTableViewCell.h */,
 				4D97287619FC6AEA00B421FC /* ParentItemTableViewCell.m */,
 				4D97287819FC6B0200B421FC /* ChildItemTableViewCell.h */,

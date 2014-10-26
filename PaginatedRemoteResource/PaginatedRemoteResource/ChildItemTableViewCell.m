@@ -14,12 +14,13 @@
 
 #pragma mark - Populating Views
 
-- (void)populateFor:(ChildItem *)item
+- (void)populateFor:(NSObject *)item
 {
     [self.loadingIndicator stopAnimating];
     self.nameLabel.textColor = [UIColor blackColor];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@", item.name, item.parent.name];
-    self.detailLabel.text = item.detail;
+    ChildItem *childItem = (ChildItem *)item;
+    self.nameLabel.text = [NSString stringWithFormat:@"%@", childItem.name];
+    self.detailLabel.text = childItem.detail;
 }
 
 - (void)populateAsLoading
