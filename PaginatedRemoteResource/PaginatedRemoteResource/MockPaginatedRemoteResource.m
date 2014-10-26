@@ -38,7 +38,7 @@
     NSTimeInterval delayInSeconds = [self randomDelay];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSMutableArray *results = [NSMutableArray arrayWithCapacity:limit];
-        NSUInteger stop = offset + limit;
+        NSUInteger stop = MIN(offset + limit, self.totalItemCount);
         for (NSUInteger index = offset; index < stop; index++) {
             NSObject *generatedItem = self.itemGeneratorBlock(index);
             [results addObject:generatedItem];
