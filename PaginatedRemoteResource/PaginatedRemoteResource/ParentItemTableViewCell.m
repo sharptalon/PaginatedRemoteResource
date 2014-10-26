@@ -15,18 +15,18 @@
 
 - (void)populateFor:(ParentItem *)item
 {
-    if (item) {
-        [self.loadingIndicator stopAnimating];
-        self.nameLabel.textColor = [UIColor blackColor];
-        self.nameLabel.text = item.name;
-        self.detailLabel.text = item.detail;
-    }
-    else {
-        self.nameLabel.textColor = [UIColor redColor];
-        self.nameLabel.text = @"Loading parent item...";
-        self.detailLabel.text = @"";
-        [self.loadingIndicator startAnimating];
-    }
+    [self.loadingIndicator stopAnimating];
+    self.nameLabel.textColor = [UIColor blackColor];
+    self.nameLabel.text = item.name;
+    self.detailLabel.text = item.detail;
+}
+
+- (void)populateAsLoading
+{
+    self.nameLabel.textColor = [UIColor redColor];
+    self.nameLabel.text = @"Loading parent item...";
+    self.detailLabel.text = @"";
+    [self.loadingIndicator startAnimating];
 }
 
 @end

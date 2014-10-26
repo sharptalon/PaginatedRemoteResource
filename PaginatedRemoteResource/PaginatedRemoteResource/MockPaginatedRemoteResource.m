@@ -51,7 +51,8 @@
 
 - (NSTimeInterval)randomDelay
 {
-    return ((NSTimeInterval)arc4random() / ARC4RANDOM_MAX) * self.maxDelay;
+    NSTimeInterval minDelay = (self.maxDelay > 1) ? MAX(1, self.maxDelay/2) : self.maxDelay/2;
+    return minDelay +  ((NSTimeInterval)arc4random() / ARC4RANDOM_MAX) * (self.maxDelay - minDelay);
 }
 
 @end

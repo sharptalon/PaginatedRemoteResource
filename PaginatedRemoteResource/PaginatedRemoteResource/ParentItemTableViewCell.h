@@ -17,5 +17,6 @@
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 
 - (void)populateFor:(ParentItem *)item;
+- (void)populateAsLoading;
 
 @end

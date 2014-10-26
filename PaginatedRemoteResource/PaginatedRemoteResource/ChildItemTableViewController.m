@@ -66,7 +66,12 @@
 {
     ChildItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChildItemCell" forIndexPath:indexPath];    
     ChildItem *object = self.objects[indexPath.row];
-    [cell populateFor:object];
+    if (object) {
+        [cell populateFor:object];
+    }
+    else {
+        [cell populateAsLoading];
+    }
     return cell;
 }
 
