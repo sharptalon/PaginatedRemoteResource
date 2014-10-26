@@ -63,17 +63,27 @@
 
 - (void)fetchItemsStartingAt:(NSInteger)offset
 {
+    // NOTE: Need to reload the whole table only when new rows are being added.
+    BOOL reloadWholeTable = [self.tableView numberOfRowsInSection:0] < offset + FETCH_ITEMS_LIMIT;
     [self.paginatedRemoteResource fetchItemsStartingAt:offset
                                            withLimit:FETCH_ITEMS_LIMIT
                                           completion:^(BOOL wasSuccessful, NSArray *fetchedItems, NSInteger totalItemCount) {
                                               if (wasSuccessful) {
                                                   self.itemCountSetter(totalItemCount);
+                                                  NSMutableArray *pathsToBeReloaded = [NSMutableArray arrayWithCapacity:fetchedItems.count];
                                                   NSInteger index = offset;
                                                   for (NSObject *item in fetchedItems) {
-                                                      self.indexedItemSetter(index++, item);
+                                                      self.indexedItemSetter(index, item);
+                                                      [pathsToBeReloaded addObject:[NSIndexPath indexPathForRow:index inSection:0]];
+                                                      ++index;
                                                   }
                                                   dispatch_async(dispatch_get_main_queue(), ^{
-                                                      [self.tableView reloadData];
+                                                      if (reloadWholeTable) {
+                                                          [self.tableView reloadData];
+                                                      }
+                                                      else {
+                                                          [self.tableView reloadRowsAtIndexPaths:pathsToBeReloaded withRowAnimation:UITableViewRowAnimationNone];
+                                                      }
                                                   });
                                               }
                                           }];
