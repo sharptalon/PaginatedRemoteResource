@@ -69,9 +69,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ParentItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParentItemCell" forIndexPath:indexPath];
-
     ParentItem *object = self.objects[indexPath.row];
-    [cell populate:object];
+    [cell populateFor:object];
     return cell;
 }
 

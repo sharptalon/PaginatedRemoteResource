@@ -96,6 +96,13 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="t9V-Hh-J3F">
+                                            <rect key="frame" x="572" y="12" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="jHk-9X-Dsv"/>
+                                                <constraint firstAttribute="height" constant="20" id="k1Z-gv-KDF"/>
+                                            </constraints>
+                                        </activityIndicatorView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L08-Yy-4fZ">
                                             <rect key="frame" x="8" y="12" width="49" height="21"/>
                                             <constraints>
@@ -110,9 +117,11 @@
                                         <constraint firstAttribute="centerY" secondItem="W42-tw-fdb" secondAttribute="centerY" id="IAY-aA-vFn"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="L08-Yy-4fZ" secondAttribute="bottom" constant="2" id="Iq6-d7-YpA"/>
                                         <constraint firstItem="L08-Yy-4fZ" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="Ttx-fl-di0"/>
+                                        <constraint firstItem="t9V-Hh-J3F" firstAttribute="trailing" secondItem="37f-cq-3Eg" secondAttribute="trailingMargin" id="Z2v-Yj-hE9"/>
                                         <constraint firstAttribute="centerY" secondItem="L08-Yy-4fZ" secondAttribute="centerY" id="auE-QL-PWR"/>
                                         <constraint firstItem="W42-tw-fdb" firstAttribute="trailing" secondItem="37f-cq-3Eg" secondAttribute="trailingMargin" id="fEO-DV-Wf2"/>
                                         <constraint firstItem="L08-Yy-4fZ" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="4" id="olg-Ju-uEA"/>
+                                        <constraint firstAttribute="centerY" secondItem="t9V-Hh-J3F" secondAttribute="centerY" id="yp8-Wm-gA2"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
@@ -124,6 +133,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="detailLabel" destination="W42-tw-fdb" id="38d-A9-quz"/>
+                                    <outlet property="loadingIndicator" destination="t9V-Hh-J3F" id="GRm-bP-nWF"/>
                                     <outlet property="nameLabel" destination="L08-Yy-4fZ" id="Iqe-Me-F2a"/>
                                     <segue destination="8DN-t8-PiD" kind="show" identifier="showChild" id="LmX-kZ-H2u"/>
                                 </connections>
@@ -175,8 +185,17 @@
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ijW-cc-Hz9">
+                                            <rect key="frame" x="572" y="12" width="20" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="BCb-MY-JxB"/>
+                                                <constraint firstAttribute="width" constant="20" id="miI-aP-l9V"/>
+                                            </constraints>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="ijW-cc-Hz9" firstAttribute="trailing" secondItem="lOY-y0-VQ0" secondAttribute="trailingMargin" id="1J0-cV-cNt"/>
+                                        <constraint firstAttribute="centerY" secondItem="ijW-cc-Hz9" secondAttribute="centerY" id="49f-ej-hX9"/>
                                         <constraint firstItem="S7U-WQ-xNH" firstAttribute="trailing" secondItem="lOY-y0-VQ0" secondAttribute="trailingMargin" id="M7V-Qt-9JJ"/>
                                         <constraint firstItem="D94-Mg-7dH" firstAttribute="leading" secondItem="lOY-y0-VQ0" secondAttribute="leadingMargin" id="aTH-bM-nAl"/>
                                         <constraint firstAttribute="centerY" secondItem="D94-Mg-7dH" secondAttribute="centerY" id="igl-8W-KUy"/>
@@ -185,6 +204,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="detailLabel" destination="S7U-WQ-xNH" id="0Sd-En-raa"/>
+                                    <outlet property="loadingIndicator" destination="ijW-cc-Hz9" id="swy-ac-s44"/>
                                     <outlet property="nameLabel" destination="D94-Mg-7dH" id="7TW-oV-1qt"/>
                                     <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showDetail" id="wDO-HY-yXr"/>
                                 </connections>

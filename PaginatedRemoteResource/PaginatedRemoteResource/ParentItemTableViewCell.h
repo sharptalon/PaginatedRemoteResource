@@ -14,7 +14,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *detailLabel;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
 
-- (void)populate:(ParentItem *)item;
+- (void)populateFor:(ParentItem *)item;
 
 @end
