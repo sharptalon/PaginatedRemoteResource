@@ -24,6 +24,7 @@
 		4D97288419FC7E5C00B421FC /* MockPaginatedRemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288319FC7E5C00B421FC /* MockPaginatedRemoteResource.m */; };
 		4D97288719FC7E8700B421FC /* ChildItemRemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288619FC7E8700B421FC /* ChildItemRemoteResource.m */; };
 		4D97288A19FC856000B421FC /* ItemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288919FC856000B421FC /* ItemCache.m */; };
+		4D97288E19FD8E4300B421FC /* RemoteResourceItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288D19FD8E4300B421FC /* RemoteResourceItemTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		4D97288819FC856000B421FC /* ItemCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCache.h; sourceTree = "<group>"; };
 		4D97288919FC856000B421FC /* ItemCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCache.m; sourceTree = "<group>"; };
 		4D97288B19FD89EC00B421FC /* RemoteResourceItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableViewCell.h; sourceTree = "<group>"; };
+		4D97288C19FD8E4300B421FC /* RemoteResourceItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableViewController.h; sourceTree = "<group>"; };
+		4D97288D19FD8E4300B421FC /* RemoteResourceItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteResourceItemTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +159,8 @@
 		4D97286919FC3DF900B421FC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4D97288C19FD8E4300B421FC /* RemoteResourceItemTableViewController.h */,
+				4D97288D19FD8E4300B421FC /* RemoteResourceItemTableViewController.m */,
 				4D97284719FC3C6000B421FC /* ParentItemTableViewController.h */,
 				4D97284819FC3C6000B421FC /* ParentItemTableViewController.m */,
 				4D97287119FC4E7300B421FC /* ChildItemTableViewController.h */,
@@ -317,6 +322,7 @@
 				4D97284C19FC3C6000B421FC /* DetailViewController.m in Sources */,
 				4D97288119FC7E4400B421FC /* ParentItemRemoteResource.m in Sources */,
 				4D97287019FC49FE00B421FC /* ChildItem.m in Sources */,
+				4D97288E19FD8E4300B421FC /* RemoteResourceItemTableViewController.m in Sources */,
 				4D97288419FC7E5C00B421FC /* MockPaginatedRemoteResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

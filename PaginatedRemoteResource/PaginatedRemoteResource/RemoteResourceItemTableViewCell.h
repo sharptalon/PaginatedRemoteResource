@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^PaginatedRemoteResourceBlock)(BOOL wasSuccessful, NSArray *fetchItems, NSInteger totalItemCount);
-
 @protocol RemoteResourceItemTableViewCell <NSObject>
 
 - (void)populateFor:(NSObject *)item;

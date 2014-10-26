@@ -8,21 +8,12 @@
 
 #import "ChildItemTableViewController.h"
 #import "DetailViewController.h"
-#import "RemoteResourceItemTableViewCell.h"
 #import "ParentItem.h"
 #import "ChildItem.h"
 
 #import "AppDelegate.h"
 #import "ItemCache.h"
 #import "ChildItemRemoteResource.h"
-
-#define FETCH_PARENT_ITEMS_LIMIT 25
-
-@interface ChildItemTableViewController ()
-
-@property (strong, nonatomic) ChildItemRemoteResource *childrenRemoteResource;
-
-@end
 
 
 @implementation ChildItemTableViewController
@@ -38,36 +29,32 @@
 
 - (void)viewDidLoad
 {
+    [self setupResourceManagementFor:[[ChildItemRemoteResource alloc] initWithTotalItemCount:500 parent:self.parentItem]
+                     itemCountGetter:^NSUInteger{
+                         AppDelegate *app = [UIApplication sharedApplication].delegate;
+                         NSUInteger childCount;
+                         if ([app.itemCache lookupChildCountOfParentWithIndex:self.parentItemIndex count:&childCount]) {
+                             return childCount;
+                         }
+                         return 0;
+                     }
+                     itemCountSetter:^(NSUInteger totalItemCount) {
+                         AppDelegate *app = [UIApplication sharedApplication].delegate;
+                         [app.itemCache setChildCount:totalItemCount forParentWithIndex:self.parentItemIndex];
+                     }
+                   indexedItemGetter:^NSObject *(NSUInteger index) {
+                       AppDelegate *app = [UIApplication sharedApplication].delegate;
+                       return [app.itemCache getChildItem:index ofParentWithIndex:self.parentItemIndex];
+                   }
+                   indexedItemSetter:^(NSUInteger index, NSObject *item) {
+                       AppDelegate *app = [UIApplication sharedApplication].delegate;
+                       [app.itemCache setChildItem:(ChildItem *)item withIndex:index forParentWithIndex:self.parentItemIndex];
+                   }
+                 cellReuseIdentifier:@"ChildItemCell"];
     [super viewDidLoad];
-
-    self.childrenRemoteResource = [[ChildItemRemoteResource alloc] initWithTotalItemCount:500 parent:self.parentItem];
     self.navigationItem.title = [NSString stringWithFormat:@"Children of %@", self.parentItem.name];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
                                                                                            target:self action:@selector(scrollToBottom:)];
-    // Fetch first batch of items
-    [self fetchItemsStartingAt:0];
-}
-
-
-#pragma mark - Data Fetching
-
-- (void)fetchItemsStartingAt:(NSInteger)offset
-{
-    [self.childrenRemoteResource fetchItemsStartingAt:offset
-                                           withLimit:FETCH_PARENT_ITEMS_LIMIT
-                                          completion:^(BOOL wasSuccessful, NSArray *fetchedItems, NSInteger totalItemCount) {
-                                              if (wasSuccessful) {
-                                                  AppDelegate *app = [UIApplication sharedApplication].delegate;
-                                                  [app.itemCache setChildCount:totalItemCount forParentWithIndex:self.parentItemIndex];
-                                                  NSInteger index = offset;
-                                                  for (ChildItem *item in fetchedItems) {
-                                                      [app.itemCache setChildItem:item withIndex:index++ forParentWithIndex:self.parentItemIndex];
-                                                  }
-                                                  dispatch_async(dispatch_get_main_queue(), ^{
-                                                      [self.tableView reloadData];
-                                                  });
-                                              }
-                                          }];
 }
 
 
@@ -99,67 +86,6 @@
             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:lastRow inSection:0]
                                   atScrollPosition:UITableViewScrollPositionBottom animated:YES];
         }
-    }
-}
-
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    NSUInteger childCount;
-    if ([app.itemCache lookupChildCountOfParentWithIndex:self.parentItemIndex count:&childCount]) {
-        return childCount;
-    }
-    return 0;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    ChildItem *object = [app.itemCache getChildItem:indexPath.row ofParentWithIndex:self.parentItemIndex];
-    UITableViewCell <RemoteResourceItemTableViewCell> *cell = [tableView dequeueReusableCellWithIdentifier:@"ChildItemCell" forIndexPath:indexPath];
-    if (object) {
-        [cell populateFor:object];
-    }
-    else {
-        [cell populateAsLoading];
-    }
-    return cell;
-}
-
-- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    ChildItem *object = [app.itemCache getChildItem:indexPath.row ofParentWithIndex:self.parentItemIndex];
-    return (object != nil);
-}
-
-
-#pragma mark - UIScrollViewDelegate
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    AppDelegate *app = [UIApplication sharedApplication].delegate;
-    NSInteger minimumNonCachedIndex = -1;
-    NSArray *visibleRows = [self.tableView indexPathsForVisibleRows];
-    for (NSIndexPath *visibleRow in visibleRows) {
-        NSInteger visibleIndex = visibleRow.row;
-        ChildItem *object = [app.itemCache getChildItem:visibleIndex ofParentWithIndex:self.parentItemIndex];
-        if (object == nil) {
-            if ((visibleIndex < minimumNonCachedIndex) || (minimumNonCachedIndex < 0)) {
-                minimumNonCachedIndex = visibleIndex;
-            }
-        }
-    }
-    if (minimumNonCachedIndex >= 0) {
-        [self fetchItemsStartingAt:minimumNonCachedIndex];
     }
 }
 
