@@ -11,9 +11,13 @@
 #import "ParentItemTableViewCell.h"
 #import "ParentItem.h"
 
+#import "AppDelegate.h"
+#import "ItemCache.h"
+#import "ParentItemRemoteResource.h"
+
 @interface ParentItemTableViewController ()
 
-@property NSMutableArray *objects;
+@property (strong, nonatomic) ParentItemRemoteResource *parentsRemoteResource;
 
 @end
 
@@ -28,13 +32,7 @@
         self.clearsSelectionOnViewWillAppear = NO;
         self.preferredContentSize = CGSizeMake(320.0, 600.0);
     }
-    self.objects =  [[NSMutableArray alloc] initWithArray:@[
-                                                            [[ParentItem alloc] initWithName:@"A" detail:@"First"],
-                                                            [[ParentItem alloc] initWithName:@"B" detail:@"Second"],
-                                                            [[ParentItem alloc] initWithName:@"C" detail:@"Third"],
-                                                            [[ParentItem alloc] initWithName:@"D" detail:@"Fourth"],
-                                                            [[ParentItem alloc] initWithName:@"E" detail:@"Fifth"],
-                                                            ]];
+    self.parentsRemoteResource = [[ParentItemRemoteResource alloc] initWithTotalItemCount:45];
 }
 
 - (void)viewDidLoad
@@ -50,7 +48,8 @@
     if ([[segue identifier] isEqualToString:@"showChild"]) {
         ChildItemTableViewController *childItemTVC = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        ParentItem *object = self.objects[indexPath.row];
+        AppDelegate *app = [UIApplication sharedApplication].delegate;
+        ParentItem *object = [app.itemCache getParentItem:indexPath.row];
         childItemTVC.parentItem = object;
     }
 }
@@ -64,15 +63,24 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.objects.count;
+    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    return app.itemCache.parentItemCount;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    ParentItem *object = [app.itemCache getParentItem:indexPath.row];
     ParentItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ParentItemCell" forIndexPath:indexPath];
-    ParentItem *object = self.objects[indexPath.row];
     [cell populateFor:object];
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    ParentItem *object = [app.itemCache getParentItem:indexPath.row];
+    return (object != nil);
 }
 
 @end

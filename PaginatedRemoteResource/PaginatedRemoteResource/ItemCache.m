@@ -21,6 +21,7 @@
 
 #pragma mark - Properties
 
+@synthesize parentItemCount = _parentItemCount;
 @synthesize parentItemCache = _parentItemCache;
 @synthesize childCountCache = _childCountCache;
 @synthesize childItemCaches = _childItemCaches;
@@ -32,6 +33,7 @@
 {
     self = [super init];
     if (self) {
+        self.parentItemCount = 0;
         self.parentItemCache = [[NSCache alloc] init];
         self.childCountCache = [[NSCache alloc] init];
         self.childItemCaches = [[NSCache alloc] init];
@@ -45,6 +47,9 @@
 - (void)setParentItem:(ParentItem *)parentItem forIndex:(NSUInteger)parentIndex
 {
     [self.parentItemCache setObject:parentItem forKey:[NSNumber numberWithUnsignedInteger:parentIndex]];
+    if (parentIndex >= self.parentItemCount) {
+        self.parentItemCount = parentIndex + 1;
+    }
 }
 
 - (ParentItem *)getParentItem:(NSUInteger)parentIndex

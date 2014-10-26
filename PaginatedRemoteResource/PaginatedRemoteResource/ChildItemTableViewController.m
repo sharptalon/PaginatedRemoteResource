@@ -12,9 +12,14 @@
 #import "ParentItem.h"
 #import "ChildItem.h"
 
+#import "AppDelegate.h"
+#import "ItemCache.h"
+#import "ChildItemRemoteResource.h"
+
 @interface ChildItemTableViewController ()
 
 @property NSMutableArray *objects;
+@property (strong, nonatomic) ChildItemRemoteResource *childrenRemoteResource;
 
 @end
 
@@ -40,6 +45,7 @@
                                                             [[ChildItem alloc] initWithParent:self.parentItem name:@"D" detail:@"Fourth"],
                                                             [[ChildItem alloc] initWithParent:self.parentItem name:@"E" detail:@"Fifth"],
                                                             ]];
+    self.childrenRemoteResource = [[ChildItemRemoteResource alloc] initWithTotalItemCount:45 parent:self.parentItem];
     self.navigationItem.title = [NSString stringWithFormat:@"Children of %@", self.parentItem.name];
 }
 

@@ -13,6 +13,8 @@
 
 @interface ItemCache : NSObject
 
+@property (assign, nonatomic) NSUInteger parentItemCount;
+
 - (void)setParentItem:(ParentItem *)parentItem forIndex:(NSUInteger)parentIndex;
 - (ParentItem *)getParentItem:(NSUInteger)parentIndex;
 
