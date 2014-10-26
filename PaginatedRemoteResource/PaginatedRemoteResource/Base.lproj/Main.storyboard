@@ -87,8 +87,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W42-tw-fdb">
-                                            <rect key="frame" x="550" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W42-tw-fdb">
+                                            <rect key="frame" x="556" y="11" width="36" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="jOb-Ce-hZH"/>
                                             </constraints>
@@ -103,8 +103,8 @@
                                                 <constraint firstAttribute="height" constant="20" id="k1Z-gv-KDF"/>
                                             </constraints>
                                         </activityIndicatorView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L08-Yy-4fZ">
-                                            <rect key="frame" x="8" y="12" width="49" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L08-Yy-4fZ">
+                                            <rect key="frame" x="8" y="11" width="44" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="3s2-Dg-UcK"/>
                                             </constraints>
@@ -115,20 +115,13 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="centerY" secondItem="W42-tw-fdb" secondAttribute="centerY" id="IAY-aA-vFn"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="L08-Yy-4fZ" secondAttribute="bottom" constant="2" id="Iq6-d7-YpA"/>
                                         <constraint firstItem="L08-Yy-4fZ" firstAttribute="leading" secondItem="37f-cq-3Eg" secondAttribute="leadingMargin" id="Ttx-fl-di0"/>
                                         <constraint firstItem="t9V-Hh-J3F" firstAttribute="trailing" secondItem="37f-cq-3Eg" secondAttribute="trailingMargin" id="Z2v-Yj-hE9"/>
                                         <constraint firstAttribute="centerY" secondItem="L08-Yy-4fZ" secondAttribute="centerY" id="auE-QL-PWR"/>
                                         <constraint firstItem="W42-tw-fdb" firstAttribute="trailing" secondItem="37f-cq-3Eg" secondAttribute="trailingMargin" id="fEO-DV-Wf2"/>
-                                        <constraint firstItem="L08-Yy-4fZ" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="4" id="olg-Ju-uEA"/>
-                                        <constraint firstAttribute="centerY" secondItem="t9V-Hh-J3F" secondAttribute="centerY" id="yp8-Wm-gA2"/>
+                                        <constraint firstItem="t9V-Hh-J3F" firstAttribute="top" secondItem="37f-cq-3Eg" secondAttribute="topMargin" constant="4" id="ln8-0Y-PbN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="t9V-Hh-J3F" secondAttribute="bottom" constant="3" id="y6Q-lF-AnD"/>
                                     </constraints>
-                                    <variation key="default">
-                                        <mask key="constraints">
-                                            <exclude reference="Iq6-d7-YpA"/>
-                                            <exclude reference="olg-Ju-uEA"/>
-                                        </mask>
-                                    </variation>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -165,21 +158,19 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tAu-4v-e64" id="lOY-y0-VQ0">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D94-Mg-7dH">
-                                            <rect key="frame" x="8" y="11" width="49" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D94-Mg-7dH">
+                                            <rect key="frame" x="8" y="11" width="44" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Z1j-3w-0nB"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="jKO-ui-EJE"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7U-WQ-xNH">
-                                            <rect key="frame" x="550" y="11" width="42" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S7U-WQ-xNH">
+                                            <rect key="frame" x="556" y="11" width="36" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="VBK-jd-hwP"/>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="efC-J7-Lul"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -195,10 +186,11 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="ijW-cc-Hz9" firstAttribute="trailing" secondItem="lOY-y0-VQ0" secondAttribute="trailingMargin" id="1J0-cV-cNt"/>
-                                        <constraint firstAttribute="centerY" secondItem="ijW-cc-Hz9" secondAttribute="centerY" id="49f-ej-hX9"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ijW-cc-Hz9" secondAttribute="bottom" constant="3" id="IB1-3L-MXD"/>
                                         <constraint firstItem="S7U-WQ-xNH" firstAttribute="trailing" secondItem="lOY-y0-VQ0" secondAttribute="trailingMargin" id="M7V-Qt-9JJ"/>
                                         <constraint firstItem="D94-Mg-7dH" firstAttribute="leading" secondItem="lOY-y0-VQ0" secondAttribute="leadingMargin" id="aTH-bM-nAl"/>
                                         <constraint firstAttribute="centerY" secondItem="D94-Mg-7dH" secondAttribute="centerY" id="igl-8W-KUy"/>
+                                        <constraint firstItem="ijW-cc-Hz9" firstAttribute="top" secondItem="lOY-y0-VQ0" secondAttribute="topMargin" constant="4" id="pae-il-dtU"/>
                                         <constraint firstAttribute="centerY" secondItem="S7U-WQ-xNH" secondAttribute="centerY" id="ure-ue-7yt"/>
                                     </constraints>
                                 </tableViewCellContentView>
