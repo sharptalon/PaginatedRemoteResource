@@ -18,7 +18,7 @@
 {
     [self.loadingIndicator stopAnimating];
     self.nameLabel.textColor = [UIColor blackColor];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@, child of %@", item.name, item.parent.name];
+    self.nameLabel.text = [NSString stringWithFormat:@"%@", item.name, item.parent.name];
     self.detailLabel.text = item.detail;
 }
 

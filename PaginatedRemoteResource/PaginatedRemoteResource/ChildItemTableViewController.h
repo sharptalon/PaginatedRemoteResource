@@ -13,6 +13,7 @@
 
 @interface ChildItemTableViewController : UITableViewController
 
+@property (assign, nonatomic) NSUInteger parentItemIndex;
 @property (strong, nonatomic) ParentItem *parentItem;
 @property (strong, nonatomic) DetailViewController *detailViewController;
 

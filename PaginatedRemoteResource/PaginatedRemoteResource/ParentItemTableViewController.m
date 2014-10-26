@@ -78,7 +78,9 @@
         ChildItemTableViewController *childItemTVC = segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         AppDelegate *app = [UIApplication sharedApplication].delegate;
-        ParentItem *object = [app.itemCache getParentItem:indexPath.row];
+        NSUInteger index = indexPath.row;
+        ParentItem *object = [app.itemCache getParentItem:index];
+        childItemTVC.parentItemIndex = index;
         childItemTVC.parentItem = object;
     }
 }

@@ -19,7 +19,7 @@
     self = [super initWithTotalItemCount:totalItemCount maxDelay:3.0
                            itemGenerator:^NSObject *(NSUInteger itemIndex) {
                                ChildItem *item = [[ChildItem alloc] initWithParent:parent
-                                                                              name:[NSString stringWithFormat:@"%@-child %lu", parent.name, (unsigned long)itemIndex]
+                                                                              name:[NSString stringWithFormat:@"%@-Child %lu", parent.name, (unsigned long)itemIndex]
                                                                             detail:@"A child item"];
                                return item;
                            }];

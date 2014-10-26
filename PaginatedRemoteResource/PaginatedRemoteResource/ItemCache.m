@@ -66,7 +66,7 @@
 
 - (BOOL)lookupChildCountOfParentWithIndex:(NSUInteger)parentIndex count:(NSUInteger *)count
 {
-    NSNumber *boxedCount = [self.parentItemCache objectForKey:[NSNumber numberWithUnsignedInteger:parentIndex]];
+    NSNumber *boxedCount = [self.childCountCache objectForKey:[NSNumber numberWithUnsignedInteger:parentIndex]];
     if (boxedCount) {
         *count = [boxedCount unsignedIntegerValue];
         return YES;
