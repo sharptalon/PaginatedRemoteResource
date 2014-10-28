@@ -9,14 +9,25 @@
 #import "ParentItemTableViewController.h"
 #import "ChildItemTableViewController.h"
 #import "ParentItem.h"
-
+#import "ParentItemTableManager.h"
 #import "AppDelegate.h"
 #import "ItemCache.h"
-#import "ParentItemRemoteResource.h"
 
 #include "Constants.h"
 
+@interface ParentItemTableViewController ()
+
+@property (strong, nonatomic) ParentItemTableManager *tableManager;
+
+@end
+
+
 @implementation ParentItemTableViewController
+
+#pragma mark - Properties
+
+@synthesize tableManager = _tableManager;
+
 
 #pragma mark - View Controller Lifecycle
 
@@ -32,25 +43,11 @@
 
 - (void)viewDidLoad
 {
-    [self setupResourceManagementFor:[[ParentItemRemoteResource alloc] initWithTotalItemCount:NUMBER_OF_PARENTS]
-                     itemCountGetter:^NSUInteger{
-                         AppDelegate *app = [UIApplication sharedApplication].delegate;
-                         return app.itemCache.parentItemCount;
-                     }
-                     itemCountSetter:^(NSUInteger totalItemCount) {
-                         AppDelegate *app = [UIApplication sharedApplication].delegate;
-                         [app.itemCache setParentItemCount:totalItemCount];
-                     }
-                   indexedItemGetter:^NSObject *(NSUInteger index) {
-                       AppDelegate *app = [UIApplication sharedApplication].delegate;
-                       return [app.itemCache getParentItem:index];
-                   }
-                   indexedItemSetter:^(NSUInteger index, NSObject *item) {
-                       AppDelegate *app = [UIApplication sharedApplication].delegate;
-                       [app.itemCache setParentItem:(ParentItem *)item forIndex:index];
-                   }
-                 cellReuseIdentifier:@"ParentItemCell"];
     [super viewDidLoad];
+
+    self.tableManager = [[ParentItemTableManager alloc] initForTableView:self.tableView];
+    self.tableView.dataSource = self.tableManager;
+    self.tableView.delegate = self.tableManager;
 }
 
 
@@ -64,8 +61,7 @@
         AppDelegate *app = [UIApplication sharedApplication].delegate;
         NSUInteger index = indexPath.row;
         ParentItem *object = [app.itemCache getParentItem:index];
-        childItemTVC.parentItemIndex = index;
-        childItemTVC.parentItem = object;
+        [childItemTVC setParentItem:object withIndex:index];
     }
 }
 

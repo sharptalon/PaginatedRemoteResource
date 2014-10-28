@@ -6,15 +6,16 @@
 //  Copyright (c) 2014 Sharp Talon. All rights reserved.
 //
 
-#import "RemoteResourceItemTableViewController.h"
+#import <UIKit/UIKit.h>
 
 @class ParentItem;
 @class DetailViewController;
 
-@interface ChildItemTableViewController : RemoteResourceItemTableViewController
+@interface ChildItemTableViewController : UITableViewController
 
-@property (assign, nonatomic) NSUInteger parentItemIndex;
-@property (strong, nonatomic) ParentItem *parentItem;
-@property (strong, nonatomic) DetailViewController *detailViewController;
+@property (assign, nonatomic, readonly) NSUInteger parentItemIndex;
+@property (strong, nonatomic, readonly) ParentItem *parentItem;
+
+- (void)setParentItem:(ParentItem *)parentItem withIndex:(NSUInteger)parentItemIndex;
 
 @end

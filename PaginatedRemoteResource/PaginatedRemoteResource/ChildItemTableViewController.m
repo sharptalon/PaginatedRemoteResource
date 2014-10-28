@@ -10,12 +10,18 @@
 #import "DetailViewController.h"
 #import "ParentItem.h"
 #import "ChildItem.h"
-
+#import "ChildItemTableManager.h"
 #import "AppDelegate.h"
 #import "ItemCache.h"
-#import "ChildItemRemoteResource.h"
 
 #include "Constants.h"
+
+@interface ChildItemTableViewController ()
+
+@property (strong, nonatomic) ChildItemTableManager *tableManager;
+
+@end
+
 
 @implementation ChildItemTableViewController
 
@@ -23,36 +29,23 @@
 
 @synthesize parentItemIndex = _parentItemIndex;
 @synthesize parentItem = _parentItem;
-@synthesize detailViewController = _detailViewController;
+@synthesize tableManager = _tableManager;
+
+- (void)setParentItem:(ParentItem *)parentItem withIndex:(NSUInteger)parentItemIndex
+{
+    _parentItem = parentItem;
+    _parentItemIndex = parentItemIndex;
+}
 
 
 #pragma mark - View Controller Lifecycle
 
 - (void)viewDidLoad
 {
-    [self setupResourceManagementFor:[[ChildItemRemoteResource alloc] initWithTotalItemCount:NUMBER_OF_CHILDREN_PER_PARENT parent:self.parentItem]
-                     itemCountGetter:^NSUInteger{
-                         AppDelegate *app = [UIApplication sharedApplication].delegate;
-                         NSUInteger childCount;
-                         if ([app.itemCache lookupChildCountOfParentWithIndex:self.parentItemIndex count:&childCount]) {
-                             return childCount;
-                         }
-                         return 0;
-                     }
-                     itemCountSetter:^(NSUInteger totalItemCount) {
-                         AppDelegate *app = [UIApplication sharedApplication].delegate;
-                         [app.itemCache setChildCount:totalItemCount forParentWithIndex:self.parentItemIndex];
-                     }
-                   indexedItemGetter:^NSObject *(NSUInteger index) {
-                       AppDelegate *app = [UIApplication sharedApplication].delegate;
-                       return [app.itemCache getChildItem:index ofParentWithIndex:self.parentItemIndex];
-                   }
-                   indexedItemSetter:^(NSUInteger index, NSObject *item) {
-                       AppDelegate *app = [UIApplication sharedApplication].delegate;
-                       [app.itemCache setChildItem:(ChildItem *)item withIndex:index forParentWithIndex:self.parentItemIndex];
-                   }
-                 cellReuseIdentifier:@"ChildItemCell"];
     [super viewDidLoad];
+    self.tableManager = [[ChildItemTableManager alloc] initForTableView:self.tableView withParentItem:self.parentItem withIndex:self.parentItemIndex];
+    self.tableView.dataSource = self.tableManager;
+    self.tableView.delegate = self.tableManager;
     self.navigationItem.title = [NSString stringWithFormat:@"Children of %@", self.parentItem.name];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFastForward
                                                                                            target:self action:@selector(scrollToBottom:)];

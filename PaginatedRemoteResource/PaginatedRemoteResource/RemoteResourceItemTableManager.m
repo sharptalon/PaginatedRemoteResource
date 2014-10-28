@@ -6,13 +6,14 @@
 //  Copyright (c) 2014 Sharp Talon. All rights reserved.
 //
 
-#import "RemoteResourceItemTableViewController.h"
+#import "RemoteResourceItemTableManager.h"
 #import "RemoteResourceItemTableViewCell.h"
 
 #include "Constants.h"
 
-@interface RemoteResourceItemTableViewController ()
+@interface RemoteResourceItemTableManager ()
 
+@property (weak, nonatomic) UITableView *tableView;
 @property (copy, nonatomic) NSString *cellReuseIdentifier;
 @property (strong, nonatomic) id<PaginatedRemoteResource> paginatedRemoteResource;
 @property (copy) ItemCountGetter itemCountGetter;
@@ -23,39 +24,37 @@
 @end
 
 
-@implementation RemoteResourceItemTableViewController
+@implementation RemoteResourceItemTableManager
 
 #pragma mark - Properties
 
+@synthesize tableView = _tableView;
 @synthesize cellReuseIdentifier = _cellReuseIdentifier;
 @synthesize paginatedRemoteResource = _paginatedRemoteResource;
 
 
 #pragma mark - Initializer
 
-- (void)setupResourceManagementFor:(id<PaginatedRemoteResource>)paginatedRemoteResource
-                   itemCountGetter:(ItemCountGetter)itemCountGetter
-                   itemCountSetter:(ItemCountSetter)itemCountSetter
-                 indexedItemGetter:(IndexedItemGetter)indexedItemGetter
-                 indexedItemSetter:(IndexedItemSetter)indexedItemSetter
-               cellReuseIdentifier:(NSString *)cellReuseIdentifier
+- (id)initForTableView:(UITableView *)tableView
+          withResource:(id<PaginatedRemoteResource>)paginatedRemoteResource
+       itemCountGetter:(ItemCountGetter)itemCountGetter
+       itemCountSetter:(ItemCountSetter)itemCountSetter
+     indexedItemGetter:(IndexedItemGetter)indexedItemGetter
+     indexedItemSetter:(IndexedItemSetter)indexedItemSetter
+   cellReuseIdentifier:(NSString *)cellReuseIdentifier
 {
-    self.paginatedRemoteResource = paginatedRemoteResource;
-    self.itemCountGetter = itemCountGetter;
-    self.itemCountSetter = itemCountSetter;
-    self.indexedItemGetter = indexedItemGetter;
-    self.indexedItemSetter = indexedItemSetter;
-    self.cellReuseIdentifier = cellReuseIdentifier;
-}
-
-
-#pragma mark - View Lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Fetch first batch of items
-    [self fetchItemsStartingAt:0];
+    self = [super init];
+    if (self) {
+        self.tableView = tableView;
+        self.paginatedRemoteResource = paginatedRemoteResource;
+        self.itemCountGetter = itemCountGetter;
+        self.itemCountSetter = itemCountSetter;
+        self.indexedItemGetter = indexedItemGetter;
+        self.indexedItemSetter = indexedItemSetter;
+        self.cellReuseIdentifier = cellReuseIdentifier;
+        [self fetchItemsStartingAt:0];
+    }
+    return self;
 }
 
 

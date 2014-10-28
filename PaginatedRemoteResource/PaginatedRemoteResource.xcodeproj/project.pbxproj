@@ -24,7 +24,9 @@
 		4D97288419FC7E5C00B421FC /* MockPaginatedRemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288319FC7E5C00B421FC /* MockPaginatedRemoteResource.m */; };
 		4D97288719FC7E8700B421FC /* ChildItemRemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288619FC7E8700B421FC /* ChildItemRemoteResource.m */; };
 		4D97288A19FC856000B421FC /* ItemCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288919FC856000B421FC /* ItemCache.m */; };
-		4D97288E19FD8E4300B421FC /* RemoteResourceItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288D19FD8E4300B421FC /* RemoteResourceItemTableViewController.m */; };
+		4D97288E19FD8E4300B421FC /* RemoteResourceItemTableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97288D19FD8E4300B421FC /* RemoteResourceItemTableManager.m */; };
+		4D97289419FFA92C00B421FC /* ParentItemTableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97289319FFA92C00B421FC /* ParentItemTableManager.m */; };
+		4D97289719FFAA1A00B421FC /* ChildItemTableManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D97289619FFAA1A00B421FC /* ChildItemTableManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,9 +75,13 @@
 		4D97288819FC856000B421FC /* ItemCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemCache.h; sourceTree = "<group>"; };
 		4D97288919FC856000B421FC /* ItemCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemCache.m; sourceTree = "<group>"; };
 		4D97288B19FD89EC00B421FC /* RemoteResourceItemTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableViewCell.h; sourceTree = "<group>"; };
-		4D97288C19FD8E4300B421FC /* RemoteResourceItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableViewController.h; sourceTree = "<group>"; };
-		4D97288D19FD8E4300B421FC /* RemoteResourceItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteResourceItemTableViewController.m; sourceTree = "<group>"; };
+		4D97288C19FD8E4300B421FC /* RemoteResourceItemTableManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteResourceItemTableManager.h; sourceTree = "<group>"; };
+		4D97288D19FD8E4300B421FC /* RemoteResourceItemTableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteResourceItemTableManager.m; sourceTree = "<group>"; };
 		4D97289019FDA99500B421FC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4D97289219FFA92C00B421FC /* ParentItemTableManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParentItemTableManager.h; sourceTree = "<group>"; };
+		4D97289319FFA92C00B421FC /* ParentItemTableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParentItemTableManager.m; sourceTree = "<group>"; };
+		4D97289519FFAA1A00B421FC /* ChildItemTableManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildItemTableManager.h; sourceTree = "<group>"; };
+		4D97289619FFAA1A00B421FC /* ChildItemTableManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildItemTableManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +131,7 @@
 				4D97289019FDA99500B421FC /* Constants.h */,
 				4D97284019FC3C6000B421FC /* Supporting Files */,
 				4D97286919FC3DF900B421FC /* View Controllers */,
+				4D97289119FFA8EE00B421FC /* Table Managers */,
 				4D97287419FC6AC800B421FC /* Table Cells */,
 				4D97286D19FC49B400B421FC /* Data */,
 				4D97287E19FC7E1E00B421FC /* Remote Resources */,
@@ -161,8 +168,6 @@
 		4D97286919FC3DF900B421FC /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4D97288C19FD8E4300B421FC /* RemoteResourceItemTableViewController.h */,
-				4D97288D19FD8E4300B421FC /* RemoteResourceItemTableViewController.m */,
 				4D97284719FC3C6000B421FC /* ParentItemTableViewController.h */,
 				4D97284819FC3C6000B421FC /* ParentItemTableViewController.m */,
 				4D97287119FC4E7300B421FC /* ChildItemTableViewController.h */,
@@ -210,6 +215,19 @@
 				4D97288619FC7E8700B421FC /* ChildItemRemoteResource.m */,
 			);
 			name = "Remote Resources";
+			sourceTree = "<group>";
+		};
+		4D97289119FFA8EE00B421FC /* Table Managers */ = {
+			isa = PBXGroup;
+			children = (
+				4D97288C19FD8E4300B421FC /* RemoteResourceItemTableManager.h */,
+				4D97288D19FD8E4300B421FC /* RemoteResourceItemTableManager.m */,
+				4D97289219FFA92C00B421FC /* ParentItemTableManager.h */,
+				4D97289319FFA92C00B421FC /* ParentItemTableManager.m */,
+				4D97289519FFAA1A00B421FC /* ChildItemTableManager.h */,
+				4D97289619FFAA1A00B421FC /* ChildItemTableManager.m */,
+			);
+			name = "Table Managers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,11 +338,13 @@
 				4D97287319FC4E7300B421FC /* ChildItemTableViewController.m in Sources */,
 				4D97287A19FC6B0200B421FC /* ChildItemTableViewCell.m in Sources */,
 				4D97288A19FC856000B421FC /* ItemCache.m in Sources */,
+				4D97289719FFAA1A00B421FC /* ChildItemTableManager.m in Sources */,
 				4D97284319FC3C6000B421FC /* main.m in Sources */,
 				4D97284C19FC3C6000B421FC /* DetailViewController.m in Sources */,
 				4D97288119FC7E4400B421FC /* ParentItemRemoteResource.m in Sources */,
 				4D97287019FC49FE00B421FC /* ChildItem.m in Sources */,
-				4D97288E19FD8E4300B421FC /* RemoteResourceItemTableViewController.m in Sources */,
+				4D97288E19FD8E4300B421FC /* RemoteResourceItemTableManager.m in Sources */,
+				4D97289419FFA92C00B421FC /* ParentItemTableManager.m in Sources */,
 				4D97288419FC7E5C00B421FC /* MockPaginatedRemoteResource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
